@@ -1,0 +1,35 @@
+.bg{
+	height: 500px;
+	
+	background: url(http://resource.feng.com/resource/h059/h36/img201508171731522.jpg);
+	background-size:cover;
+	background-position: center center;
+	position: relative;
+	overflow: hidden;
+
+}
+
+.bg::after{
+	content: "";
+	display: block;
+	width: 100%;
+	background-color: rgba(255, 152, 0, 0.32);
+	height: 100vh;
+}
+
+.bg-title{
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translateX(-50%) translateY(-50%);
+	color: #333;
+}
+
+@media screen and (max-width: 700px) {
+	.bg{
+		height: 300px;
+	}
+
+}
+
