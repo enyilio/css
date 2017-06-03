@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>圓角原理</title>
+	<style type="text/css">
+	.der{
+		margin: 100px;
+	}
+		.sman{
+			position: relative;
+			width: 300px;
+			height: 300px;
+	/*--- 順序為x1234 y1234 ，配對為 x12 x34 y14 y23 兩兩相加起來要剛好100%
+	請參考影片https://www.youtube.com/watch?v=US-UuA3OiEY--*/
+
+	/*---結論1：用百分比%才能夠做出正圓形---*/
+	/*---結論2：若每面px加起來超過寬度，會取四面中最高一面px做為分母，然後將各圓角px分子帶入取得百分比---*/
+	
+			border-radius: 30% 70% 40% 60% / 40% 50% 50% 60%;
+			border: #333 solid 3px;
+			overflow: hidden;
+			transition: .5s;
+		}
+
+		.sman:before{
+			display: block;
+			content: "";
+			width: 82%;
+			height: 82%;
+			position: absolute;
+			top:5%;
+			left: 5%;
+			/*background-color: #aa00ff;*/
+			border-radius: 40% 60% 50% 50% / 50% 80% 20% 50%;
+			border: #666 solid 3px;
+			transition: .5s;
+			
+		}
+
+
+		.sman:hover{
+			border-radius: 40% 60% 50% 50% / 50% 70% 30% 50%;
+
+		}
+		
+		.sman:hover:before{
+			border-radius: 20% 80% 70% 30% / 40% 50% 50% 60%;
+		}
+
+	</style>
+</head>
+<body>
+<div class="der">
+	<div class="sman">
+		<img width="300" height="300" src="http://blog.roodo.com/arielwow/dc004a2c.jpg">
+	</div>
+
+</div>
+
+
+</body>
+</html>
